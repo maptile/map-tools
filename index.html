@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="assets/leaflet/leaflet.css" />
+        <script src="assets/leaflet/leaflet-src.js"></script>
+        <script src="data-polygons.js"></script>
+        <script src="data-circles.js"></script>
+        <script src="data-markers.js"></script>
+        <style>
+            #map {
+                height: 100%;
+                width: 100%;
+            }
+            #info > span{
+                margin-left: 10px;
+                border: 1px solid #555;
+            }
+            body {
+                display: flex;
+            }
+
+            #control{
+                width: 300px;
+            }
+
+            #control input{
+                width: 80px;
+            }
+
+            #control .section{
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="control">
+            <div class="section circle">
+                <div>Add Circle:</div>
+                <div>Lat: <input class="lat" type="text" /></div>
+                <div>Lng: <input class="lng" type="text" /></div>
+                <div>Radius(m): <input class="radius" type="text" /></div>
+                <div>Color: <input class="color" type="text" /></div>
+                <div><button id="addCircle">Add Circle</div>
+            </div>
+
+            <div class="section marker">
+                <div>Add Marker:</div>
+                <div>Lat: <input class="lat" type="text" /></div>
+                <div>Lng: <input class="lng" type="text" /></div>
+                <div>Color: <input class="color" type="text" /></div>
+                <div><button id="addMarker">Add Marker</div>
+            </div>
+
+            <div class="section polygon">
+                <div>Add Polygon:</div>
+                <div>Lat1: <input class="lat1" type="text" />Lng1: <input class="lng1" type="text" /></div>
+                <div>Lat2: <input class="lat2" type="text" />Lng2: <input class="lng2" type="text" /></div>
+                <div>Lat3: <input class="lat3" type="text" />Lng3: <input class="lng3" type="text" /></div>
+                <div>Lat4: <input class="lat4" type="text" />Lng4: <input class="lng4" type="text" /></div>
+                <div>Color: <input class="color" type="text" /></div>
+                <div><button id="addPolygon">Add Polygon</div>
+            </div>
+            <div class="section current-latlng">
+                <div class="title">Current LatLng:</div>
+                <div class="value">0, 0</div>
+            </div>
+            <div class="section view-center">
+                <div class="title">View Center, Zoom:</div>
+                <div class="value"></div>
+                <button id="showViewPosition">Show View Position</button>
+            </div>
+        </div>
+        <div id="map"></div>
+        <script src="custom.js"></script>
+    </body>
+</html>
